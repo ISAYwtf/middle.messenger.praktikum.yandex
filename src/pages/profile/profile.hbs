@@ -1,0 +1,41 @@
+<div class="profile-root">
+    <button class="profile-back" data-page="chats">
+        <span class="profile-back__icon">{{ svgIcon 'arrowLeft' }}</span>
+    </button>
+    <main class="profile-container">
+        <div class="avatar profile-avatar">
+            {{#unless image}}
+                {{ svgIcon 'templateAvatar' }}
+            {{/unless}}
+            {{#if image}}
+                <img src="{{image.path}}" alt="{{image.name}}">
+            {{/if}}
+            <label for="input_avatar" class="profile-avatar__overlay">Поменять <br /> аватар</label>
+            <input
+                type="file"
+                name="avatar"
+                id="input_avatar"
+            />
+        </div>
+        <div class="profile-name">Искандер</div>
+        <form class="profile-data">
+            {{> ProfileRow name="email" key="Почта" value="pochta@yandex.ru" }}
+            {{> ProfileRow name="login" key="Логин" value="ivanivanov" }}
+            {{> ProfileRow name="first_name" key="Имя" value="Иван" }}
+            {{> ProfileRow name="second_name" key="Фамилия" value="Иванов" }}
+            {{> ProfileRow name="display_name" key="Имя в чате" value="Иван" }}
+            {{> ProfileRow name="phone" key="Телефон" value="+7 (909) 967 30 30" }}
+        </form>
+        <div class="profile-actions">
+            <div class="profile-row profile-actions__row">
+                <button>Изменить данные</button>
+            </div>
+            <div class="profile-row profile-actions__row">
+                <button>Изменить пароль</button>
+            </div>
+            <div class="profile-row profile-actions__row profile-actions__row_critical">
+                <button>Выйти</button>
+            </div>
+        </div>
+    </main>
+</div>

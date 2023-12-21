@@ -1,0 +1,21 @@
+<div class="message">
+    <div class="{{#if image}}message__img{{else}}message__text{{/if}}">
+        {{#if image}}
+            <img src="{{image.path}}" alt="{{image.name}}">
+        {{else}}
+            {{content}}
+        {{/if}}
+    </div>
+    <div class="message__info">
+        {{#if read}}
+            <div class="message__check message__check_read">
+                {{ svgIcon 'read' }}
+            </div>
+        {{else if sent}}
+            <div class="message__check message__check_sent">
+                {{ svgIcon 'sent' }}
+            </div>
+        {{/if}}
+        <span class="message__time">{{time}}</span>
+    </div>
+</div>

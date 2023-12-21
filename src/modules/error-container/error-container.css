@@ -1,0 +1,17 @@
+.error-container {
+    width: fit-content;
+    margin: auto;
+    text-align: center;
+}
+
+.error-container__code {
+    font-size: 40px;
+    font-weight: var(--font-weight-primary);
+}
+
+.error-container__message {
+    font-size: 20px;
+    font-weight: var(--font-weight-primary);
+    margin-top: 20px;
+    margin-bottom: 70px;
+}

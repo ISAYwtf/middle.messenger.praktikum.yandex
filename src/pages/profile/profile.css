@@ -1,0 +1,114 @@
+.profile-root {
+    position: relative;
+    height: 100%;
+}
+
+.profile-back {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    padding: 0 18px;
+    background-color: var(--color-background-secondary);
+    transition: background-color 0.15s;
+    border-right: 1px solid var(--color-tertiary);
+}
+
+.profile-back:hover {
+    background-color: var(--color-background-tertiary);
+}
+
+.profile-back__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 28px;
+    aspect-ratio: 1;
+    background-color: var(--color-primary);
+    border-radius: 50px;
+    color: var(--color-background-primary)
+}
+
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 510px;
+    margin: 60px auto;
+}
+
+.profile-avatar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 130px;
+    margin-bottom: 20px;
+}
+
+.profile-avatar #input_avatar {
+    display: none;
+}
+
+.profile-avatar__overlay {
+    opacity: 0;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-background-primary);
+    font-size: 13px;
+    font-family: var(--font-family);
+    font-weight: var(--font-weight-primary);
+    transition: opacity 0.15s;
+}
+
+.profile-avatar:hover .profile-avatar__overlay {
+    opacity: 1;
+}
+
+.profile-name {
+    font-weight: 600;
+    margin-bottom: 50px;
+}
+
+.profile-data {
+    margin-bottom: 40px;
+    font-size: 13px;
+    align-self: stretch;
+}
+
+.profile-row {
+    padding: 10px 0;
+}
+
+.profile-row:not(:last-child) {
+    border-bottom: 1px solid var(--color-tertiary);
+}
+
+.profile-actions {
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+    align-self: stretch;
+}
+
+.profile-actions__row {
+    text-align: left;
+}
+
+.profile-actions__row button {
+    background: none;
+    color: var(--color-primary);
+    padding: 0;
+}
+
+.profile-actions__row_critical button {
+    color: var(--color-error);
+}

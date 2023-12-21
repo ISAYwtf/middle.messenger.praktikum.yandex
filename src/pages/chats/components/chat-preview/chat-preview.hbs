@@ -1,0 +1,24 @@
+<div class="chat-preview">
+    <div class="avatar chat-preview__avatar">
+        {{#if image}}
+            <img src="{{image.path}}" alt="{{image.name}}">
+        {{/if}}
+    </div>
+    <div class="chat-preview__info">
+        <div class="chat-preview__row chat-preview__top">
+            <span class="chat-preview__name">{{name}}</span>
+            <span class="chat-preview__date">{{date}}</span>
+        </div>
+        <div class="chat-preview__row chat-preview__bottom">
+            <div class="chat-preview__message-block">
+                {{#unless opposite}}
+                    <span class="chat-preview__author">Вы:</span>
+                {{/unless}}
+                <span class="chat-preview__message">{{message}}</span>
+            </div>
+            {{#if count}}
+                {{> Badge count=count }}
+            {{/if}}
+        </div>
+    </div>
+</div>

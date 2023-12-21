@@ -1,0 +1,83 @@
+@import '/src/assets/fonts/font-faces.css';
+@import '/src/components/button/button.css';
+@import '/src/components/input/input.css';
+@import '/src/components/profile-link/profile-link.css';
+@import '/src/components/badge/badge.css';
+@import '/src/components/link/link.css';
+
+@import '/src/modules/error-container/error-container.css';
+@import '/src/modules/form-auth/form-auth.css';
+
+@import '/src/pages/chats/chats.css';
+@import '/src/pages/profile/profile.css';
+@import '/src/pages/profile/components/profile-row/profile-row.css';
+@import '/src/pages/chats/components/chats-navigation/chats-navigation.css';
+@import '/src/pages/chats/components/chat-window/chat-window.css';
+@import '/src/pages/chats/components/top-bar/top-bar.css';
+@import '/src/pages/chats/components/search-input/search-input.css';
+@import '/src/pages/chats/components/chat-preview/chat-preview.css';
+@import '/src/pages/chats/components/chat/chat.css';
+@import '/src/pages/chats/components/message/message.css';
+@import '/src/pages/chats/components/message-block/message-block.css';
+@import '/src/pages/error/error.css';
+
+:root {
+  --font-family: 'Inter', sans-serif;
+  --font-weight-primary: 500;
+  --font-weight-secondary: 400;
+
+  --color-primary: #3369f3;
+  --color-secondary: #e4edfd;
+  --color-tertiary: #efefef;
+  --color-error: #ff2f2f;
+  --color-text: #1e1e1e;
+  --color-text-secondary: #999;
+  --color-background-primary: #fff;
+  --color-background-secondary: #fbfbfb;
+  --color-background-tertiary: #f8f8f8;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-primary);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-primary);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+
+.avatar {
+  border-radius: 100px;
+  aspect-ratio: 1;
+  flex-shrink: 0;
+  background-color: var(--color-tertiary);
+  overflow: hidden;
+}
+
+.avatar img {
+  height: 100%;
+}

@@ -1,0 +1,28 @@
+.form-auth {
+    display: flex;
+    flex-direction: column;
+    padding: 50px 30px 30px;
+    width: 340px;
+    min-height: 460px;
+    box-shadow: 0 0 6px 0 #00000024;
+    border-radius: 12px;
+    box-sizing: border-box;
+}
+
+.form-auth__content {
+    flex-grow: 1;
+}
+
+.form-auth__actions {
+    margin-top: 47px;
+}
+
+.form-auth__actions .link {
+    margin-top: 14px;
+}
+
+.title {
+    font-size: 20px;
+    margin-bottom: 40px;
+    align-self: center;
+}

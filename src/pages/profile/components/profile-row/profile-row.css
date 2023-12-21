@@ -1,0 +1,14 @@
+.profile-data__row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.profile-data__value {
+    color: var(--color-text-secondary);
+    background: none;
+    border: none;
+}
+
+.profile-data__value:focus {
+    outline: none;
+}
