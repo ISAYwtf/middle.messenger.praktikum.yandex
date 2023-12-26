@@ -1,0 +1,12 @@
+<form class="form-auth">
+    <div class="title">
+        {{title}}
+    </div>
+    <div class="form-auth__content">
+        {{> @partial-block }}
+    </div>
+    <div class="form-auth__actions">
+        {{> Button label=primaryActionLabel type="primary" page="chats" }}
+        {{> Link label=secondaryActionLabel href=secondaryActionLink }}
+    </div>
+</form>

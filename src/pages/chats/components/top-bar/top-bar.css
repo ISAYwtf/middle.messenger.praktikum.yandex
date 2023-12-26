@@ -1,0 +1,9 @@
+.navigation__top-bar {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 10px 14px;
+    border-bottom: 1px solid var(--color-tertiary);
+    gap: 24px;
+    background-color: var(--color-background-primary);
+    z-index: 1;
+}

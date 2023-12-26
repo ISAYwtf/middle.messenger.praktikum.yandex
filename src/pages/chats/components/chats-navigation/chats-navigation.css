@@ -1,0 +1,25 @@
+.chats-navigation {
+    display: flex;
+    flex-direction: column;
+    width: 320px;
+    background-color: var(--color-background-secondary);
+}
+
+.chats-list {
+    overflow-y: scroll;
+    margin-top: -1px;
+    z-index: 0;
+}
+
+.chats-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.chats-list::-webkit-scrollbar-track {
+    width: 6px;
+}
+
+.chats-list::-webkit-scrollbar-thumb {
+    background-color: var(--color-tertiary);
+    border-radius: 10px;
+}

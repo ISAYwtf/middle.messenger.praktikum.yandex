@@ -1,0 +1,32 @@
+.message {
+    max-width: 400px;
+    width: fit-content;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 12px;
+}
+
+.message__text {
+    font-size: 12px;
+}
+
+.message__img {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.message__info {
+    font-size: 9px;
+    color: var(--color-text-secondary);
+    margin-top: 4px;
+    display: flex;
+}
+
+.message-block__item_own .message__info {
+    color: var(--color-primary);
+}
+
+.message__time {
+    flex-grow: 1;
+    text-align: right;
+}
