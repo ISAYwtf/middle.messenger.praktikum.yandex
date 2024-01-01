@@ -1,0 +1,22 @@
+<main class="auth-container">
+    {{#> FormAuth
+            title=title
+            primaryActionLabel=primaryActionLabel
+            secondaryActionLabel=secondaryActionLabel
+            secondaryActionLink=secondaryActionLink
+            buttonRef="authButton"
+            onAuth=onAuth
+    }}
+        {{#each fields}}
+            {{{ Field
+                label=label
+                name=name
+                ref=name
+                value=value
+                type=type
+                validate=validate
+            }}}
+        {{/each}}
+    {{/FormAuth}}
+</main>
+

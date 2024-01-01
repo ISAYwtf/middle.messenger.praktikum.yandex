@@ -6,7 +6,16 @@
         {{> @partial-block }}
     </div>
     <div class="form-auth__actions">
-        {{> Button label=primaryActionLabel type="primary" page="chats" }}
-        {{> Link label=secondaryActionLabel href=secondaryActionLink }}
+        {{{ Button
+            label=primaryActionLabel
+            type="primary"
+            ref=buttonRef
+            onClick=onAuth
+            buttonType="button"
+        }}}
+        {{> Link
+            label=secondaryActionLabel
+            href=secondaryActionLink
+        }}
     </div>
 </form>

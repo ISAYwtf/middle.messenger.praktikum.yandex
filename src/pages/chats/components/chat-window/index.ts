@@ -1,1 +1,6 @@
-export { default as ChatWindow } from './chat-window.hbs?raw';
+import { registerComponent } from '@utils';
+import { ChatWindow } from './chat-window.ts';
+
+export { ChatWindow } from './chat-window.ts';
+
+registerComponent('ChatWindow', ChatWindow);

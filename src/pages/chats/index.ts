@@ -1,6 +1,11 @@
 import { registerPartials } from '@utils';
-import * as Components from './components';
+import { TopBar, SearchInput, Message, MessageBlock } from './components';
 
-export { default as ChatsPage } from './chats.hbs?raw';
+export { Chats } from './chats.ts';
 
-registerPartials(Components);
+registerPartials({
+    TopBar,
+    SearchInput,
+    Message,
+    MessageBlock
+});

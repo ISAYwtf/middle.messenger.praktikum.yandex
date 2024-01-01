@@ -1,0 +1,11 @@
+.profile-data__value {
+    color: var(--color-text-secondary);
+    background: none;
+    border: none;
+    text-align: right;
+    min-width: 200px;
+}
+
+.profile-data__value:focus {
+    outline: none;
+}

@@ -17,25 +17,37 @@
                 id="input_avatar"
             />
         </div>
-        <div class="profile-name">Искандер</div>
+        <div class="profile-name">{{firstName}}</div>
         <form class="profile-data">
-            {{> ProfileRow name="email" key="Почта" value="pochta@yandex.ru" }}
-            {{> ProfileRow name="login" key="Логин" value="ivanivanov" }}
-            {{> ProfileRow name="first_name" key="Имя" value="Иван" }}
-            {{> ProfileRow name="second_name" key="Фамилия" value="Иванов" }}
-            {{> ProfileRow name="display_name" key="Имя в чате" value="Иван" }}
-            {{> ProfileRow name="phone" key="Телефон" value="+7 (909) 967 30 30" }}
+            {{#each fields}}
+                {{{ ProfileRow
+                    ref=name
+                    key=key
+                    name=name
+                    value=value
+                    type=type
+                    editable=editable
+                    validate=validate
+                }}}
+            {{/each}}
         </form>
         <div class="profile-actions">
-            <div class="profile-row profile-actions__row">
-                <button>Изменить данные</button>
-            </div>
-            <div class="profile-row profile-actions__row">
-                <button>Изменить пароль</button>
-            </div>
-            <div class="profile-row profile-actions__row profile-actions__row_critical">
-                <button>Выйти</button>
-            </div>
+            {{#if editable}}
+                {{{ Button
+                    label="Сохранить"
+                    onClick=onSave
+                    type="primary"
+                    ref="saveAction"
+                }}}
+            {{else}}
+                {{#each actions}}
+                    {{{ ProfileActionRow
+                        label=label
+                        critical=critical
+                        onClick=onClick
+                    }}}
+                {{/each}}
+            {{/if}}
         </div>
     </main>
 </div>

@@ -1,4 +1,12 @@
 <div class="profile-row profile-data__row">
     <label class="profile-data__key" for="{{name}}">{{key}}</label>
-    <input class="profile-data__value" id="{{name}}" name="{{name}}" value="{{value}}" readonly />
+    {{{ ProfileDataInput
+        name=name
+        value=value
+        type=type
+        editable=editable
+        onBlur=onBlur
+        ref="input"
+    }}}
+    {{{ ProfileDataError ref="error" }}}
 </div>

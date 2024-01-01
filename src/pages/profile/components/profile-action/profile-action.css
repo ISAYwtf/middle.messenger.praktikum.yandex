@@ -1,0 +1,9 @@
+.profile-action__button {
+    background: none;
+    color: var(--color-primary);
+    padding: 0;
+}
+
+.profile-action__button_critical {
+    color: var(--color-error);
+}

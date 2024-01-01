@@ -5,7 +5,8 @@ import * as path from 'node:path';
 
 export default defineConfig({
     plugins: [
-        // @ts-ignore
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-expect-error
         handlebars(),
         svgToString(),
     ],
@@ -17,6 +18,7 @@ export default defineConfig({
             '@modules': path.resolve(__dirname, './src/modules'),
             '@pages': path.resolve(__dirname, './src/pages'),
             '@utils': path.resolve(__dirname, './src/utils'),
+            '@types': path.resolve(__dirname, './src/types'),
         }
     },
-})
+});

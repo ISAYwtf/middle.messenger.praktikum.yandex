@@ -1,3 +1,15 @@
+@import url('components/chat-input/chat-input.css');
+@import url('components/chats-list/chats-list.css');
+@import url('components/chat-window/chat-window.css');
+@import url('components/top-bar/top-bar.css');
+@import url('components/search-input/search-input.css');
+@import url('components/chat-preview/chat-preview.css');
+@import url('components/chat/chat.css');
+@import url('components/message/message.css');
+@import url('components/submit-button/submit-button.css');
+@import url('components/message-block/message-block.css');
+@import url('components/chat-input-line/chat-input-line.css');
+
 .chats-container {
     display: flex;
     flex-grow: 1;

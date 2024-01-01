@@ -1,31 +1,20 @@
-@import '/src/assets/fonts/font-faces.css';
-@import '/src/components/button/button.css';
-@import '/src/components/input/input.css';
-@import '/src/components/profile-link/profile-link.css';
-@import '/src/components/badge/badge.css';
-@import '/src/components/link/link.css';
-
-@import '/src/modules/error-container/error-container.css';
-@import '/src/modules/form-auth/form-auth.css';
-
-@import '/src/pages/chats/chats.css';
-@import '/src/pages/profile/profile.css';
-@import '/src/pages/profile/components/profile-row/profile-row.css';
-@import '/src/pages/chats/components/chats-navigation/chats-navigation.css';
-@import '/src/pages/chats/components/chat-window/chat-window.css';
-@import '/src/pages/chats/components/top-bar/top-bar.css';
-@import '/src/pages/chats/components/search-input/search-input.css';
-@import '/src/pages/chats/components/chat-preview/chat-preview.css';
-@import '/src/pages/chats/components/chat/chat.css';
-@import '/src/pages/chats/components/message/message.css';
-@import '/src/pages/chats/components/message-block/message-block.css';
-@import '/src/pages/error/error.css';
+@import url('/src/assets/fonts/font-faces.css');
+@import url('/src/components/button/button.css');
+@import url('/src/components/input/input.css');
+@import url('/src/components/field/field.css');
+@import url('/src/components/profile-link/profile-link.css');
+@import url('/src/components/badge/badge.css');
+@import url('/src/components/link/link.css');
+@import url('/src/modules/form-auth/form-auth.css');
+@import url('/src/modules/auth-block/auth-block.css');
+@import url('/src/pages/chats/chats.css');
+@import url('/src/pages/profile/profile.css');
+@import url('/src/pages/error/error.css');
 
 :root {
   --font-family: 'Inter', sans-serif;
   --font-weight-primary: 500;
   --font-weight-secondary: 400;
-
   --color-primary: #3369f3;
   --color-secondary: #e4edfd;
   --color-tertiary: #efefef;
@@ -62,12 +51,6 @@ a {
   display: flex;
   flex-direction: column;
   height: 100vh;
-}
-
-.login-container {
-  display: flex;
-  justify-content: center;
-  margin: auto;
 }
 
 .avatar {

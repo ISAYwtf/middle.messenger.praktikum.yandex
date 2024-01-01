@@ -1,1 +1,1 @@
-export { default as ProfileRow } from './profile-row.hbs?raw';
+export { ProfileRow } from './profile-row.ts';

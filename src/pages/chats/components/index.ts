@@ -1,8 +1,11 @@
-export { ChatsNavigation } from './chats-navigation';
+export { ChatsList } from './chats-list';
 export { ChatWindow } from './chat-window';
 export { TopBar } from './top-bar';
 export { SearchInput } from './search-input';
 export { ChatPreview } from './chat-preview';
 export { Chat } from './chat';
+export { ChatInput } from './chat-input';
 export { MessageBlock } from './message-block';
 export { Message } from './message';
+export { SubmitButton } from './submit-button';
+export { ChatInputLine } from './chat-input-line';

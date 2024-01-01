@@ -1,0 +1,45 @@
+.field {
+    padding: 10px 0;
+}
+
+.field__label {
+    position: relative;
+    display: flex;
+    padding-top: 15px;
+    flex-direction: column;
+}
+
+.field__label_text {
+    position: absolute;
+    transform-origin: top;
+    transform: translateY(0);
+    color: var(--color-text-secondary);
+    font-size: 13px;
+    user-select: none;
+    transition:
+            font-size 0.2s,
+            transform 0.2s;
+}
+
+.field__text-error {
+    margin-top: 7px;
+    color: var(--color-error);
+    font-size: 8px;
+    font-weight: var(--font-weight-secondary);
+    display: none;
+}
+
+.input:not(:placeholder-shown) + .field__label_text,
+.input:focus + .field__label_text {
+    transform: translateY(-17px);
+    font-size: 9px;
+}
+
+.field__error .field__text-error {
+    display: block;
+}
+
+.field__error .input {
+    color: var(--color-error);
+}
+
