@@ -1,3 +1,10 @@
-<button class="button button__{{type}}" data-page="{{page}}">
+<button
+    class="button button__{{type}} {{#if disabled}}button_disabled{{/if}}"
+    data-page="{{page}}"
+    type="{{buttonType}}"
+    {{#if disabled}}
+        disabled
+    {{/if}}
+>
     {{label}}
 </button>

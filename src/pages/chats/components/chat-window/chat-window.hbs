@@ -18,11 +18,7 @@
                 {{ svgIcon 'dots' }}
             </button>
         </div>
-        {{> Chat }}
-        <form class="chat-input-line">
-            <button class="attach-button">{{ svgIcon 'paperClip' }}</button>
-            <input class="chat-input" name="message" type="text" placeholder="Сообщение">
-            <button class="submit-button">{{ svgIcon 'arrowRight' }}</button>
-        </form>
+        {{{ Chat }}}
+        {{{ ChatInputLine }}}
     {{/if}}
 </main>

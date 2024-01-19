@@ -25,8 +25,16 @@
     align-items: end;
 }
 
+.message-block__item_own .message {
+    background-color: var(--color-secondary);
+}
+
 .message-block__item_opposite .message {
     background-color: var(--color-background-tertiary);
+}
+
+.message-block__item_own .message:last-child {
+    border-bottom-right-radius: 0;
 }
 
 .message-block__item_opposite .message:first-child {
@@ -35,12 +43,4 @@
 
 .message-block__item_opposite .message-item__check {
     display: none;
-}
-
-.message-block__item_own .message {
-    background-color: var(--color-secondary);
-}
-
-.message-block__item_own .message:last-child {
-    border-bottom-right-radius: 0;
 }

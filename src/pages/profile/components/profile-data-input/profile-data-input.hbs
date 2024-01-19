@@ -1,0 +1,14 @@
+<input
+    class="profile-data__value"
+    id="{{name}}"
+    name="{{name}}"
+    value="{{value}}"
+    {{#if type}}
+        type="{{type}}"
+    {{else}}
+        type="text"
+    {{/if}}
+    {{#unless editable}}
+        readonly
+    {{/unless}}
+/>

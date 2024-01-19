@@ -1,1 +1,6 @@
-export { default as ChatPreview } from './chat-preview.hbs?raw';
+import { registerComponent } from '@utils';
+import { ChatPreview } from '@pages/chats/components';
+
+export { ChatPreview } from './chat-preview.ts';
+
+registerComponent('ChatPreview', ChatPreview);

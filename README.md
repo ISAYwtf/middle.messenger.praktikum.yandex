@@ -16,6 +16,7 @@
 - Html / Css
 - Typescript
 - Handlebars
+- Eslint / Stylelint
 
 Для публикации приложения во внешнем домене используется Netlify.
 
@@ -49,6 +50,10 @@
 ## Sprint 1
 В первом спринте была выполнена верстка приложения с помощью шаблонизатора Handlebars.
 
+## Sprint 2
+Во втором спринте реализована логика и жизненный цикл компонентов с использованием EventBus.
+Добавлены статические анализаторы кода.
+
 ### Ссылки
-- [Pull request](https://github.com/ISAYwtf/middle.messenger.praktikum.yandex/pull/4)
-- [Опубликованное приложение](https://sprint-1--isay-practicum-messenger.netlify.app)
+- [Pull request](https://github.com/ISAYwtf/middle.messenger.praktikum.yandex/pull/5)
+- [Опубликованное приложение](https://isay-practicum-messenger.netlify.app)

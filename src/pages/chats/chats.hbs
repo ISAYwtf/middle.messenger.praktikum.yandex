@@ -1,4 +1,8 @@
 <div class="chats-container">
-    {{> ChatsNavigation }}
-    {{> ChatWindow selected=true userName="Герман" }}
+    {{{ ChatsList onSelect=onSelect }}}
+    {{{ ChatWindow
+        ref="chatWindow"
+        userName=userName
+        image=image
+    }}}
 </div>

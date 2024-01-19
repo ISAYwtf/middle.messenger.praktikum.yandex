@@ -1,0 +1,15 @@
+.submit-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-background-primary);
+    background-color: var(--color-primary);
+    border-radius: 20px;
+    height: 28px;
+    aspect-ratio: 1;
+}
+
+.submit-button_disabled {
+    background-color: var(--color-secondary);
+    cursor: not-allowed;
+}

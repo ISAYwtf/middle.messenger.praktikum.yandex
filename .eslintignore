@@ -1,0 +1,12 @@
+dist
+node_modules
+
+*.jpg
+*.png
+*.svg
+*.ttf
+*.md
+*.css
+*.json
+*.log
+*.hbs

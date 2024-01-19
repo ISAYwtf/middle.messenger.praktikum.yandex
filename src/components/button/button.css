@@ -22,6 +22,11 @@
     text-align: center;
 }
 
+.button_disabled {
+    background-color: var(--color-secondary);
+    cursor: not-allowed;
+}
+
 .button-arrow {
     background-color: var(--color-primary);
     height: 28px;

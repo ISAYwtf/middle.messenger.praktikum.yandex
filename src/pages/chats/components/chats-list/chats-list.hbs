@@ -1,0 +1,16 @@
+<div class="chats-navigation">
+    {{> TopBar }}
+    <div class="chats-list">
+        {{#each list}}
+            {{{ ChatPreview
+                id=id
+                image=image
+                name=name
+                date=date
+                opposite=opposite
+                message=message
+                count=count
+            }}}
+        {{/each}}
+    </div>
+</div>

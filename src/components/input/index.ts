@@ -1,1 +1,6 @@
-export { default as Input } from './input.hbs?raw';
+import { registerComponent } from '@utils';
+import { Input } from './input.ts';
+
+export { Input } from './input.ts';
+
+registerComponent('Input', Input);

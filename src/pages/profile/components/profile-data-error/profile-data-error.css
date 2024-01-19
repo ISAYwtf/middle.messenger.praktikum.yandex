@@ -1,0 +1,16 @@
+.profile-data__error {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateX(100%);
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    color: var(--color-background-primary);
+    background-color: var(--color-error);
+    border-radius: 0 8px 8px 0;
+}
+
+.profile-data__error-hidden {
+    display: none;
+}

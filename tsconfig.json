@@ -12,26 +12,28 @@
       "@pages": ["src/pages"],
       "@pages/*": ["src/pages/*"],
       "@utils": ["src/utils"],
-      "@utils/*": ["src/utils/*"]
+      "@utils/*": ["src/utils/*"],
+      "@types": ["src/types"],
+      "@types/*": ["src/types/*"]
     },
     "target": "ES2020",
     "useDefineForClassFields": true,
     "module": "ESNext",
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "skipLibCheck": true,
-
-    /* Bundler mode */
     "moduleResolution": "bundler",
+    "strictNullChecks": true,
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
+    "sourceMap": true,
     "isolatedModules": true,
     "noEmit": true,
-
-    /* Linting */
+    "noImplicitAny": true,
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"]
+  "exclude": ["**/**.hbs"],
+  "include": ["src", "plugins", "vite.config.ts"]
 }

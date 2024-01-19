@@ -1,12 +1,11 @@
-<div class="input">
-    <label class="input__container">
-        <input
-            class="input__element"
-            placeholder=""
-            type="{{type}}"
-            name="{{name}}"
-        />
-        <div class="input__label">{{label}}</div>
-    </label>
-    <span class="input__text-error">{{error}}</span>
-</div>
+<input
+    class="input"
+    placeholder=""
+    name="{{name}}"
+    {{#if type}}
+        type="{{type}}"
+    {{else}}
+        type="text"
+    {{/if}}
+    value="{{value}}"
+/>

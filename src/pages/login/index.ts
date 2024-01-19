@@ -1,1 +1,1 @@
-export { default as LoginPage } from './login.hbs?raw';
+export { Login } from './login.ts';

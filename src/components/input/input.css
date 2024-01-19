@@ -1,27 +1,4 @@
 .input {
-    padding: 10px 0;
-}
-
-.input__container {
-    position: relative;
-    display: flex;
-    padding-top: 15px;
-    flex-direction: column;
-}
-
-.input__label {
-    position: absolute;
-    transform-origin: top;
-    transform: translateY(0);
-    color: var(--color-text-secondary);
-    font-size: 13px;
-    user-select: none;
-    transition:
-            font-size 0.2s,
-            transform 0.2s;
-}
-
-.input__element {
     border: none;
     border-bottom: 1px solid var(--color-primary);
     font-size: 13px;
@@ -30,29 +7,7 @@
     padding: 0 0 7px;
 }
 
-.input__element:focus-visible {
+.input:focus-visible {
     outline: none;
-}
-
-.input__text-error {
-    margin-top: 7px;
-    color: var(--color-error);
-    font-size: 8px;
-    font-weight: var(--font-weight-secondary);
-    display: none;
-}
-
-.input__element:not(:placeholder-shown) + .input__label,
-.input__element:focus + .input__label {
-    transform: translateY(-17px);
-    font-size: 9px;
-}
-
-.input__error .input__text-error {
-    display: block;
-}
-
-.input__error .input__element {
-    color: var(--color-error);
 }
 

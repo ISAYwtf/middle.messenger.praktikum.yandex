@@ -1,6 +1,16 @@
-import * as Components from './components';
-import { registerPartials } from '@utils';
+import { registerComponent } from '@utils';
+import {
+    ProfileAction,
+    ProfileActionRow,
+    ProfileRow,
+    ProfileDataInput,
+    ProfileDataError,
+} from './components';
 
-registerPartials(Components);
+registerComponent('ProfileRow', ProfileRow);
+registerComponent('ProfileAction', ProfileAction);
+registerComponent('ProfileActionRow', ProfileActionRow);
+registerComponent('ProfileDataInput', ProfileDataInput);
+registerComponent('ProfileDataError', ProfileDataError);
 
-export { default as ProfilePage } from './profile.hbs?raw';
+export { Profile } from './profile.ts';
