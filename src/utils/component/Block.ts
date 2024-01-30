@@ -1,7 +1,8 @@
 import { nanoid } from 'nanoid';
 import Handlebars from 'handlebars';
 import { AnyFunction, WithEvents } from '@types';
-import { EmbedFn, EventBus } from '@utils';
+import { cloneDeep, EmbedFn, EventBus, isEqual } from '@utils';
+import { AppStore } from '@store';
 
 export type RefType = Record<string, Block>
 
@@ -20,7 +21,7 @@ export class Block<Props extends object = object, Refs extends RefType = RefType
     };
 
     public id = nanoid(6);
-    protected props: WithEvents<Props>;
+    protected props: WithEvents<Props> & Partial<AppStore>;
     protected refs: Refs = {} as Refs;
     private children: Block[] = [];
     private eventBus: () => EventBus;
@@ -34,7 +35,7 @@ export class Block<Props extends object = object, Refs extends RefType = RefType
         eventBus.emit(Block.EVENTS.INIT);
     }
 
-    _addEvents() {
+    private _addEvents() {
         const { events = {} } = this.props;
 
         Object.keys(events).forEach(eventName => {
@@ -47,7 +48,7 @@ export class Block<Props extends object = object, Refs extends RefType = RefType
         });
     }
 
-    _removeEvents() {
+    private _removeEvents() {
         const { events = {} } = this.props;
 
         Object.keys(events).forEach(eventName => {
@@ -60,7 +61,7 @@ export class Block<Props extends object = object, Refs extends RefType = RefType
         });
     }
 
-    _registerEvents(eventBus: EventBus) {
+    private _registerEvents(eventBus: EventBus) {
         eventBus.on(Block.EVENTS.INIT, this._init.bind(this));
         eventBus.on(Block.EVENTS.FLOW_CDM, this._componentDidMount.bind(this));
         eventBus.on(Block.EVENTS.FLOW_CDU, this._componentDidUpdate.bind(this));
@@ -76,7 +77,7 @@ export class Block<Props extends object = object, Refs extends RefType = RefType
 
     protected init() {}
 
-    _componentDidMount() {
+    private _componentDidMount() {
         this._checkInDom();
         this.componentDidMount();
     }
@@ -95,15 +96,15 @@ export class Block<Props extends object = object, Refs extends RefType = RefType
         }
     }
 
-    protected componentDidUpdate(_: Props, __: Props) {
-        return true;
+    protected componentDidUpdate(oldProps: Props, newProps: Props) {
+        return !isEqual(oldProps, newProps);
     }
 
     /**
      * Хелпер, который проверяет, находится ли элемент в DOM дереве
      * И если нет, триггерит событие COMPONENT_WILL_UNMOUNT
      */
-    _checkInDom() {
+    private _checkInDom() {
         const elementInDOM = document.body.contains(this._element);
 
         if (elementInDOM) {
@@ -114,7 +115,7 @@ export class Block<Props extends object = object, Refs extends RefType = RefType
         this.eventBus().emit(Block.EVENTS.FLOW_CWU, this.props);
     }
 
-    _componentWillUnmount() {
+    private _componentWillUnmount() {
         this._removeEvents();
         this.componentWillUnmount();
     }
@@ -193,19 +194,18 @@ export class Block<Props extends object = object, Refs extends RefType = RefType
         return this._element;
     }
 
-    _makePropsProxy(props: Props): Props {
+    private _makePropsProxy(props: Props): Props {
         return new Proxy(props, {
             get: (target: Props, prop: string) => {
                 const value = target[prop as keyof Props];
                 return typeof value === 'function' ? value.bind(target) : value;
             },
             set: (target: Props, prop: string, value) => {
-                const oldTarget = { ...target };
+                const oldTarget = cloneDeep(target);
 
                 target[prop as keyof Props] = value;
 
                 // Запускаем обновление компоненты
-                // Плохой cloneDeep, в следующей итерации нужно заставлять добавлять cloneDeep им самим
                 this.eventBus().emit(Block.EVENTS.FLOW_CDU, oldTarget, target);
                 return true;
             },

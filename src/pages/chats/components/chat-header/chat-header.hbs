@@ -1,0 +1,15 @@
+<div class="chat-header">
+    <div class="chat-header__author">
+        <div class="avatar chat-header__author-avatar">
+            {{#if avatarFile}}
+                <img src="data:image/jpeg;base64,{{{avatarFile}}}" alt="Chat Avatar">
+            {{/if}}
+        </div>
+        <div class="chat-header__author-name">{{title}}</div>
+    </div>
+    {{{ ChatOptionsButton onClick=onOptionsClick ref="optionsButton" }}}
+    {{{ ChatOptionsSelect options=options ref="options" }}}
+    {{{ NewUserModal ref="newUserModal" }}}
+    {{{ DeleteChatModal ref="deleteChatModal" }}}
+    {{{ DeleteUserModal ref="deleteUserModal" }}}
+</div>

@@ -14,7 +14,15 @@
       "@utils": ["src/utils"],
       "@utils/*": ["src/utils/*"],
       "@types": ["src/types"],
-      "@types/*": ["src/types/*"]
+      "@types/*": ["src/types/*"],
+      "@routes": ["src/routes"],
+      "@routes/*": ["src/routes/*"],
+      "@store": ["src/store"],
+      "@store/*": ["src/store/*"],
+      "@api": ["src/api"],
+      "@api/*": ["src/api/*"],
+      "@services": ["src/services"],
+      "@services/*": ["src/services/*"]
     },
     "target": "ES2020",
     "useDefineForClassFields": true,

@@ -1,0 +1,18 @@
+{{#> Modal
+    title=title
+    open=open
+    modalActions=actions
+}}
+    <div>
+        {{#each fields}}
+            {{{ Field
+                label=label
+                name=name
+                ref=name
+                value=value
+                type=type
+                validate=validate
+            }}}
+        {{/each}}
+    </div>
+{{/Modal}}

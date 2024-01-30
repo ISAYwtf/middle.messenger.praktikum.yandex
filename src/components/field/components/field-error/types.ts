@@ -1,3 +1,3 @@
 export interface FieldErrorProps {
-    error: string,
+    error: string | null,
 }

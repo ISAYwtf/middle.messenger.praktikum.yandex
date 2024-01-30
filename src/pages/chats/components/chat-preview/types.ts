@@ -4,7 +4,7 @@ export interface ChatPreviewProps {
     id: string,
     image?: Image,
     name: string,
-    date: string,
+    time: string,
     message: string,
     opposite?: boolean,
     count?: number,

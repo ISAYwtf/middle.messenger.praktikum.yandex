@@ -1,8 +1,7 @@
 <div class="chats-container">
-    {{{ ChatsList onSelect=onSelect }}}
-    {{{ ChatWindow
-        ref="chatWindow"
-        userName=userName
-        image=image
-    }}}
+    <div class="chats-navigation">
+        {{{ TopBar }}}
+        {{{ ChatsList onSelect=onSelect }}}
+    </div>
+    {{{ ChatWindow }}}
 </div>

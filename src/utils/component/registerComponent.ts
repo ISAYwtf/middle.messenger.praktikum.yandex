@@ -1,12 +1,6 @@
 import Handlebars from 'handlebars';
 import { HelperOptions } from 'handlebars';
-import { Block } from './Block';
-
-export type EmbedFn = (fragment: DocumentFragment) => void;
-
-interface BlockConstructable<Props extends object = object> {
-    new (props: Props): Block,
-}
+import { BlockConstructable } from './types.ts';
 
 export function registerComponent<Props extends object = object>(
     name: string,

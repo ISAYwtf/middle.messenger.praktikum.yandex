@@ -1,1 +1,6 @@
-export { default as SearchInput } from './search-input.hbs?raw';
+import { registerComponent } from '@utils';
+import { SearchInput } from './search-input.ts';
+
+registerComponent('SearchInput', SearchInput);
+
+export { SearchInput } from './search-input.ts';

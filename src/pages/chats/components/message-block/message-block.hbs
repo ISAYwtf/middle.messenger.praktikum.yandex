@@ -1,10 +1,10 @@
 <div class="message-block">
-    <div class="message-block__date">{{date}}</div>
     {{#each blocks}}
-        <div class="message-block__item {{#if opposite}}message-block__item_opposite{{else}}message-block__item_own{{/if}}">
+        <div class="message-block__item {{#if mine}}message-block__item_own{{else}}message-block__item_opposite{{/if}}">
             {{#each items}}
                 {{> Message }}
             {{/each}}
         </div>
     {{/each}}
+    <div class="message-block__date">{{date}}</div>
 </div>

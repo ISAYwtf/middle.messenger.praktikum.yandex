@@ -1,0 +1,31 @@
+<div
+    class="modal"
+    role="dialog"
+    {{#if open}}
+        data-shown
+    {{/if}}
+>
+    <div class="modal-box">
+        <span class="modal-title">
+            {{ title }}
+        </span>
+        {{#if @partial-block}}
+            <div class="modal-body">
+                {{> @partial-block }}
+            </div>
+        {{/if}}
+        {{#if modalActions}}
+            <div class="modal-actions">
+                {{#each modalActions}}
+                    {{{ Button
+                        buttonType=buttonType
+                        type=type
+                        label=label
+                        onClick=onClick
+                        ref=ref
+                    }}}
+                {{/each}}
+            </div>
+        {{/if}}
+    </div>
+</div>

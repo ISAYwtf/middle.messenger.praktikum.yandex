@@ -1,23 +1,8 @@
 <div class="profile-root">
-    <button class="profile-back" data-page="chats">
-        <span class="profile-back__icon">{{ svgIcon 'arrowLeft' }}</span>
-    </button>
+    {{{ ProfileBackButton }}}
     <main class="profile-container">
-        <div class="avatar profile-avatar">
-            {{#unless image}}
-                {{ svgIcon 'templateAvatar' }}
-            {{/unless}}
-            {{#if image}}
-                <img src="{{image.path}}" alt="{{image.name}}">
-            {{/if}}
-            <label for="input_avatar" class="profile-avatar__overlay">Поменять <br /> аватар</label>
-            <input
-                type="file"
-                name="avatar"
-                id="input_avatar"
-            />
-        </div>
-        <div class="profile-name">{{firstName}}</div>
+        {{{ ProfileAvatar avatar=user.avatarFile }}}
+        <div class="profile-name">{{user.firstName}}</div>
         <form class="profile-data">
             {{#each fields}}
                 {{{ ProfileRow
@@ -26,7 +11,7 @@
                     name=name
                     value=value
                     type=type
-                    editable=editable
+                    editable=../editable
                     validate=validate
                 }}}
             {{/each}}
@@ -49,5 +34,6 @@
                 {{/each}}
             {{/if}}
         </div>
+        {{{ ProfileModal ref="modal" }}}
     </main>
 </div>

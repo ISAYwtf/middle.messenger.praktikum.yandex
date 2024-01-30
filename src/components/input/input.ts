@@ -10,6 +10,7 @@ export class Input extends Block<InputProps> {
     protected init() {
         this.props.events = {
             blur: this.props.onBlur,
+            input: this.props.onInput,
         };
     }
 

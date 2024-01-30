@@ -1,6 +1,6 @@
 import { registerComponent } from '@utils';
-import { ChatWindow } from './chat-window.ts';
+import { ChatWindowConnected } from './chat-window.ts';
 
-export { ChatWindow } from './chat-window.ts';
+export { ChatWindowConnected } from './chat-window.ts';
 
-registerComponent('ChatWindow', ChatWindow);
+registerComponent('ChatWindow', ChatWindowConnected);

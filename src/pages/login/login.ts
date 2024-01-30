@@ -1,19 +1,22 @@
-import { loginFields } from './stub.ts';
+import { LOGIN_FIELDS_CONFIG } from './fieldsConfig.ts';
 import { AuthBlock } from '@modules';
+import { LoginDTO } from '@api/auth/types.ts';
+import { authService } from '@services';
 
 export class Login extends AuthBlock {
     protected init() {
         this.setProps({
-            fields: loginFields,
+            fields: LOGIN_FIELDS_CONFIG,
             title: 'Вход',
             primaryActionLabel: 'Авторизоваться',
             secondaryActionLabel: 'Нет аккаунта?',
-            secondaryActionLink: 'registration',
+            secondaryActionLink: 'sign-up',
         });
     }
 
-    protected auth() {
-        // todo Отправка данных на сервер
-        console.log(this.fields);
+    protected async auth() {
+        const fields = this.fields as unknown as LoginDTO;
+        await authService.login(fields);
+        // todo Выводить ошибку (компонент уведомлений)
     }
 }

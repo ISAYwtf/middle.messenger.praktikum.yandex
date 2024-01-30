@@ -1,8 +1,8 @@
 import { Block } from '@utils';
 import { default as template } from './field.hbs?raw';
-import { FieldProps } from './types.ts';
+import { FieldProps, FieldRefs } from './types.ts';
 
-export class Field extends Block<FieldProps> {
+export class Field extends Block<FieldProps, FieldRefs> {
     constructor(props: FieldProps) {
         super({
             ...props,
@@ -19,6 +19,10 @@ export class Field extends Block<FieldProps> {
             return null;
         }
         return (this.refs.input.element as HTMLInputElement)?.value;
+    }
+
+    public get errorField() {
+        return this.refs.error;
     }
 
     public error = false;

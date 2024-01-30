@@ -1,4 +1,8 @@
 <div class="navigation__top-bar">
-    {{> ProfileLink }}
-    {{> SearchInput }}
+    <div class="navigation__top-bar-actions">
+        {{{ NewChatButton ref="newChatButton" onClick=onClickNewChat }}}
+        {{> ProfileLink }}
+    </div>
+    {{{ SearchInput }}}
+    {{{ NewChatModal ref="modal" }}}
 </div>

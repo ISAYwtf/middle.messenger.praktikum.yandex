@@ -1,4 +1,10 @@
 <div class="search-input-container">
     {{{ svgIcon 'search' }}}
-    <input class="search-input" type="text" placeholder="Поиск">
+    {{{ Input
+        classname="search-input"
+        name="searchChat"
+        placeholder="Поиск"
+        onInput=onChange
+        ref="input"
+    }}}
 </div>

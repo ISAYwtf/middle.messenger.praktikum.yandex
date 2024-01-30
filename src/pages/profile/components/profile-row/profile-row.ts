@@ -10,6 +10,11 @@ export class ProfileRow extends Block<ProfileRowProps> {
         });
     }
 
+    protected componentDidUpdate(oldProps: ProfileRowProps, newProps: ProfileRowProps): boolean {
+        this.validate();
+        return super.componentDidUpdate(oldProps, newProps);
+    }
+
     public get value() {
         if (this.error) {
             return null;
@@ -24,6 +29,9 @@ export class ProfileRow extends Block<ProfileRowProps> {
     }
 
     private validate() {
+        if (!this.props.editable) {
+            return null;
+        }
         const value = (this.refs.input.element as HTMLInputElement)?.value;
         const error = this.props.validate?.(value) ?? null;
         this.setError(Boolean(error));

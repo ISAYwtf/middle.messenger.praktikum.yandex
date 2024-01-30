@@ -1,17 +1,16 @@
 import { Block } from '@utils';
-import { ChatProps } from './types.ts';
 import { default as template } from './chat.hbs?raw';
-import { CHAT_BLOCKS } from './stub.ts';
+import { connect } from '@store';
+import { ChatProps } from './types.ts';
 
 export class Chat extends Block<ChatProps> {
     constructor(props: ChatProps) {
-        super({
-            ...props,
-            dateBlocks: CHAT_BLOCKS,
-        });
+        super(props);
     }
 
     protected render(): string {
         return template;
     }
 }
+
+export const ChatConnected = connect(['chatMessages'])(Chat);

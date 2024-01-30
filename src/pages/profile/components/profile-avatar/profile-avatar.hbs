@@ -1,0 +1,10 @@
+<div class="avatar profile-avatar">
+    {{#unless avatar}}
+        {{ svgIcon 'templateAvatar' }}
+    {{/unless}}
+    {{#if avatar}}
+        <img src="data:image/jpeg;base64,{{{avatar}}}" alt="Avatar">
+    {{/if}}
+    <label for="input_avatar" class="profile-avatar__overlay">Поменять <br /> аватар</label>
+    {{{ ProfileAvatarInput onChange=onChange }}}
+</div>

@@ -1,6 +1,6 @@
 .message-block {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
 }
 
 .message-block__date {
@@ -13,7 +13,7 @@
 .message-block__item {
     margin-bottom: 20px;
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
 }
 
 .message-block__item_opposite {
@@ -33,11 +33,11 @@
     background-color: var(--color-background-tertiary);
 }
 
-.message-block__item_own .message:last-child {
+.message-block__item_own .message:first-child {
     border-bottom-right-radius: 0;
 }
 
-.message-block__item_opposite .message:first-child {
+.message-block__item_opposite .message:last-child {
     border-top-left-radius: 0;
 }
 
