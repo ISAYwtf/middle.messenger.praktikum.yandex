@@ -1,0 +1,35 @@
+.snackbar {
+    max-width: 300px;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 6px 0 rgba(0 0 0 / 0.14);
+    color: var(--color-background-primary);
+    font-weight: var(--font-weight-secondary);
+    width: fit-content;
+}
+
+.snackbar[data-type="default"] {
+    background-color: var(--color-primary);
+}
+
+.snackbar[data-type="error"] {
+    background-color: var(--color-error);
+}
+
+.snackbar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.snackbar-title {
+    font-size: 15px;
+}
+
+.snackbar-description {
+    margin-top: 4px;
+    font-size: 12px;
+    opacity: 0.8;
+    color: var(--color-background-secondary);
+}

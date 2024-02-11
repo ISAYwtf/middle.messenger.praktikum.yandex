@@ -1,7 +1,8 @@
 import { GetMethod, HTTPMethod, HttpMiddleware, PostMethod, RequestOptions } from './types';
 import { Method } from './constants.ts';
 import { queryStringify } from './queryStringify.ts';
-import { joinURL, merge } from '@utils';
+import { joinURL } from '@utils/url/joinURL.ts';
+import { merge } from '@utils/object/merge';
 
 function arrayBufferToBase64(response: XMLHttpRequest['response']) {
     const buffer = new Uint8Array(response);
@@ -76,7 +77,10 @@ export class HTTPTransport {
             xhr.onload = () => {
                 const response = this._convertResponse(xhr);
 
-                this.middleware.forEach((fn) => fn(xhr));
+                this.middleware.forEach((fn) => fn({
+                    ...xhr,
+                    response,
+                }));
 
                 if (typeof response === 'object' && response.reason) {
                     reject({

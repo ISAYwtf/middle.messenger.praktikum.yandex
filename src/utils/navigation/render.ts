@@ -1,4 +1,5 @@
 import { Block } from '@utils';
+import { SnackbarStackConnected } from '@modules';
 
 export const render = (query: string | null, block: Block) => {
     if (!query) {
@@ -13,4 +14,9 @@ export const render = (query: string | null, block: Block) => {
     }
 
     root?.replaceChildren(content);
+    const snackbar = new SnackbarStackConnected({}).getContent();
+
+    if (snackbar) {
+        root?.appendChild(snackbar);
+    }
 };

@@ -1,29 +1,6 @@
 {
+  "extends": "./tsconfig-paths.json",
   "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["src/*"],
-      "@components": ["src/components"],
-      "@components/*": ["src/components/*"],
-      "@assets": ["src/assets"],
-      "@assets/*": ["src/assets/*"],
-      "@modules": ["src/modules"],
-      "@modules/*": ["src/modules/*"],
-      "@pages": ["src/pages"],
-      "@pages/*": ["src/pages/*"],
-      "@utils": ["src/utils"],
-      "@utils/*": ["src/utils/*"],
-      "@types": ["src/types"],
-      "@types/*": ["src/types/*"],
-      "@routes": ["src/routes"],
-      "@routes/*": ["src/routes/*"],
-      "@store": ["src/store"],
-      "@store/*": ["src/store/*"],
-      "@api": ["src/api"],
-      "@api/*": ["src/api/*"],
-      "@services": ["src/services"],
-      "@services/*": ["src/services/*"]
-    },
     "target": "ES2020",
     "useDefineForClassFields": true,
     "module": "ESNext",
@@ -41,6 +18,11 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
+  },
+  "ts-node": {
+    "esm": true,
+    "experimentalSpecifierResolution": "node",
+    "transpileOnly": true
   },
   "exclude": ["**/**.hbs"],
   "include": ["src", "plugins", "vite.config.ts"]

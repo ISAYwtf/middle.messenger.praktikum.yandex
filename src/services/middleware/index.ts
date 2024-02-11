@@ -1,4 +1,5 @@
 import { HttpMiddlewareParam } from '@api/transport/types.ts';
+import { notificationService } from '@/services';
 import { router } from '@routes';
 
 export class Middleware {
@@ -10,6 +11,7 @@ export class Middleware {
 
     logger({ response }: HttpMiddlewareParam): void {
         if (response.reason) {
+            notificationService.sendError(response.reason);
             console.error(response);
         }
     }

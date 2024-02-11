@@ -20,6 +20,9 @@
 - WebSocket
 - HistoryAPI
 - XMLHttpRequest
+- Husky
+- Mocha
+- Chai
 
 Для публикации приложения во внешнем домене используется Netlify.
 
@@ -49,6 +52,11 @@
     ```shell
     npm run start
     ```
+4. Запуск тестов
+
+    ```shell
+    npm run test
+    ```
 
 ## Sprint 1
 В первом спринте была выполнена верстка приложения с помощью шаблонизатора Handlebars.
@@ -76,7 +84,9 @@
 - Фильтрация списка чатов по названию
 - Редактирование данных профиля, в том числе пароль
 
+## Sprint 4
+Добавлены проверки на `precommit` с помощью `husky`. Написаны тесты для нескольких функций с использованием библиотек `Mocha` и `Chai`.
 
 ### Ссылки
-- [Pull request](https://github.com/ISAYwtf/middle.messenger.praktikum.yandex/pull/6)
+- [Pull request](https://github.com/ISAYwtf/middle.messenger.praktikum.yandex/pull/7)
 - [Опубликованное приложение](https://isay-practicum-messenger.netlify.app)

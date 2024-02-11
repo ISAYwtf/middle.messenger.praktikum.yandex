@@ -9,5 +9,6 @@ export { Input } from './input';
 export { ProfileLink } from './profile-link';
 export { Badge } from './badge';
 export { Link } from './link';
+export { CloseButton } from './close-button';
 
 registerPartials({ Badge, Link, ProfileLink });

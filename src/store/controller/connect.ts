@@ -1,4 +1,4 @@
-import { Block, isEqual, RefType } from '@utils';
+import { Block, cloneDeep, isEqual, RefType } from '@utils';
 import { StoreEvents } from './Store.ts';
 import { AppStore } from '../types.ts';
 
@@ -7,15 +7,15 @@ type MapStateToProps = ((state: AppStore) => Partial<AppStore>) | Array<keyof Ap
 export const connect = (mapState: MapStateToProps) => {
     const mapStateToProps = (state: AppStore): Partial<AppStore> => {
         if (!Array.isArray(mapState)) {
-            return mapState(state);
+            return cloneDeep(mapState(state));
         }
 
-        return Object.keys(state)
+        return cloneDeep(Object.keys(state)
             .filter((key) => mapState.includes(key as keyof AppStore))
             .reduce((acc, key) => ({
                 ...acc,
                 [key]: state[key as keyof AppStore]
-            }), {});
+            }), {}));
     };
 
     return <P extends object = object, R extends RefType = RefType>(Component: typeof Block<P, R>) =>

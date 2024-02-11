@@ -61,10 +61,18 @@ export interface ChatDayBlockType {
     blocks: ChatBlockType[],
 }
 
-export interface AppStore extends Record<string, unknown> {
+export interface Notification {
+    id: string,
+    title: string,
+    description?: string,
+    type?: 'default' | 'error',
+}
+
+export interface AppStore {
     chatsRequestIntervalId: NodeJS.Timeout | null,
     user: (User & AvatarFile) | null,
     chats: ChatType[] | null,
     currentChat: ChatType | null,
     chatMessages: ChatDayBlockType[] | null,
+    notifications: Notification[],
 }

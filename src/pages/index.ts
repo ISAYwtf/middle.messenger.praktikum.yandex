@@ -13,8 +13,6 @@ export const PAGES = {
     '500': Error500,
 };
 
-export type PagesType = keyof typeof PAGES;
-
 export { Login } from './login';
 export { Registration } from './registration';
 export { Chats } from './chats';
