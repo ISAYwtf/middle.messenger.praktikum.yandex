@@ -1,0 +1,25 @@
+.profile-back {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    padding: 0 18px;
+    background-color: var(--color-background-secondary);
+    transition: background-color 0.15s;
+    border-right: 1px solid var(--color-tertiary);
+}
+
+.profile-back:hover {
+    background-color: var(--color-background-tertiary);
+}
+
+.profile-back__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 28px;
+    aspect-ratio: 1;
+    background-color: var(--color-primary);
+    border-radius: 50px;
+    color: var(--color-background-primary)
+}

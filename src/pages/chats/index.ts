@@ -1,11 +1,6 @@
 import { registerPartials } from '@utils';
-import { TopBar, SearchInput, Message, MessageBlock } from './components';
+import { Message, MessageBlock } from './components';
 
 export { Chats } from './chats.ts';
 
-registerPartials({
-    TopBar,
-    SearchInput,
-    Message,
-    MessageBlock
-});
+registerPartials({ Message, MessageBlock });

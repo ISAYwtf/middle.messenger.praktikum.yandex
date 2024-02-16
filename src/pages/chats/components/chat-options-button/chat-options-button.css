@@ -1,0 +1,12 @@
+.chat-header__options-button {
+    background-color: transparent;
+    height: 30px;
+    border-radius: 20px;
+    aspect-ratio: 1;
+}
+
+.chat-header__options-button:active,
+.chat-header__options-button_active {
+    background-color: var(--color-tertiary);
+    color: var(--color-primary)
+}

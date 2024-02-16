@@ -1,6 +1,6 @@
 import { registerComponent } from '@utils';
-import { Chat } from '@pages/chats/components';
+import { ChatConnected } from './chat.ts';
 
-export { Chat } from './chat.ts';
+export { ChatConnected } from './chat.ts';
 
-registerComponent('Chat', Chat);
+registerComponent('Chat', ChatConnected);

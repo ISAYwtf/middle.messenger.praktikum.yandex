@@ -1,14 +1,11 @@
 import { Block } from '@utils';
 import { default as template } from './chats-list.hbs?raw';
 import { ChatsListProps } from './types.ts';
-import { CHATS_LIST } from './stub.ts';
+import { connect } from '@store';
 
 export class ChatsList extends Block<ChatsListProps> {
     constructor(props: ChatsListProps) {
-        super({
-            ...props,
-            list: CHATS_LIST,
-        });
+        super(props);
     }
 
     protected init() {
@@ -19,23 +16,33 @@ export class ChatsList extends Block<ChatsListProps> {
 
     private onSelect(event: Event) {
         const element = (event.target as HTMLDivElement)
-            .closest('[data-user]') as HTMLDivElement;
-        const userId = element?.dataset.user;
-        const user = this.props.list
-            .find(({ id }) => id === userId);
-        if (user) {
-            this.props.onSelect?.(user);
-            const otherUsers = Array.from(
-                element.parentElement?.querySelectorAll('[data-user][data-selected]') ?? []
-            );
-            otherUsers.forEach((htmlElement) => {
-                htmlElement.removeAttribute('data-selected');
-            });
-            element.setAttribute('data-selected', 'true');
+            .closest('[data-chat]') as HTMLDivElement;
+
+        if (!element?.dataset.chat) {
+            return;
         }
+
+        const chatId = parseInt(element?.dataset.chat);
+        const chat = this.props.chats
+            ?.find(({ id }) => id === chatId);
+
+        if (!chat) {
+            return;
+        }
+
+        this.props.onSelect?.(chat);
+        const otherChats = Array.from(
+            element.parentElement?.querySelectorAll('[data-chat][data-selected]') ?? []
+        );
+        otherChats.forEach((htmlElement) => {
+            htmlElement.removeAttribute('data-selected');
+        });
+        element.setAttribute('data-selected', 'true');
     }
 
     protected render(): string {
         return template;
     }
 }
+
+export const ChatsListConnected = connect(['chats'])(ChatsList);

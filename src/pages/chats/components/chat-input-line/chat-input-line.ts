@@ -1,6 +1,7 @@
 import { Block } from '@utils';
 import { default as template } from './chat-input-line.hbs?raw';
 import { ChatInputLineProps, ChatInputLineRefs } from './types.ts';
+import { chatService } from '@services';
 
 export class ChatInputLine extends Block<ChatInputLineProps, ChatInputLineRefs> {
     constructor(props: ChatInputLineProps) {
@@ -8,6 +9,24 @@ export class ChatInputLine extends Block<ChatInputLineProps, ChatInputLineRefs> 
             ...props,
             onSubmit: () => this.postMessage(),
         });
+    }
+
+    protected init() {
+        this.props.events = {
+            keydown: (e) => this.onKeyDown(e),
+        };
+    }
+
+    private onKeyDown(e: Event) {
+        const event = e as KeyboardEvent;
+        if (event.code !== 'Enter') {
+            return;
+        }
+        event.preventDefault();
+        if (this.error) {
+            return;
+        }
+        this.postMessage();
     }
 
     componentDidMount() {
@@ -32,16 +51,13 @@ export class ChatInputLine extends Block<ChatInputLineProps, ChatInputLineRefs> 
     }
 
     private postMessage() {
+        this.chatInput.validate();
         if (this.error) {
             return;
         }
 
-        const data = {
-            [(this.chatInput.element as HTMLInputElement).name]: this.chatInput.value,
-        };
-
-        // todo Отправка данных на сервер
-        console.log(data);
+        chatService.message(this.chatInput.value);
+        this.chatInput.clear();
     }
 
     protected render(): string {

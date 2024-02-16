@@ -1,0 +1,16 @@
+.chat-options-select {
+    position: absolute;
+    flex-direction: column;
+    gap: 6px;
+    display: none;
+    transform: translateX(-100%);
+    box-shadow: 0 0 6px 0 rgba(0 0 0 / 0.14);
+    padding: 2px;
+    border-radius: 6px;
+    background-color: var(--color-background-primary);
+    z-index: 1;
+}
+
+.chat-options-select[data-shown] {
+    display: flex;
+}

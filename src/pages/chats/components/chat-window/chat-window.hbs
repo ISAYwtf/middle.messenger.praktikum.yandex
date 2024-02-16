@@ -1,23 +1,14 @@
 <main class="chat-window">
-    {{#unless selected}}
+    {{#unless currentChat}}
         <div class="chat-window__empty">
             Выберите чат, чтобы отправить сообщение
         </div>
     {{/unless}}
-    {{#if selected}}
-        <div class="chat-header">
-            <div class="chat-header__author">
-                <div class="avatar chat-header__author-avatar">
-                    {{#if image}}
-                        <img src="{{image.path}}" alt="{{image.name}}">
-                    {{/if}}
-                </div>
-                <div class="chat-header__author-name">{{userName}}</div>
-            </div>
-            <button class="chat-header__options-button">
-                {{ svgIcon 'dots' }}
-            </button>
-        </div>
+    {{#if currentChat}}
+        {{{ ChatHeader
+            avatarFile=currentChat.avatarFile
+            title=currentChat.title
+        }}}
         {{{ Chat }}}
         {{{ ChatInputLine }}}
     {{/if}}

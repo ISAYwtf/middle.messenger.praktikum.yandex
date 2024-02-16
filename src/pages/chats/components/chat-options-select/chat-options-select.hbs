@@ -1,0 +1,14 @@
+<div
+    class="chat-options-select"
+    {{#if open}}
+        data-shown
+    {{/if}}
+>
+    {{#each options}}
+        {{{ ChatOptionsItem
+            label=label
+            onClick=onClick
+            critical=critical
+        }}}
+    {{/each}}
+</div>

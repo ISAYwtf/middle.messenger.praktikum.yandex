@@ -42,6 +42,10 @@ export class AuthBlock extends Block<AuthProps, AuthRefs> {
             }), {} as Record<string, string | null>);
     }
 
+    protected getField(name: string) {
+        return this.fields[name] ?? '';
+    }
+
     protected applyErrorToSubmitButton() {
         Object.values(this.fieldElements)
             .forEach((fieldElement) => fieldElement
@@ -59,9 +63,6 @@ export class AuthBlock extends Block<AuthProps, AuthRefs> {
         }
 
         this.auth();
-
-        // todo Пока закомментировал, чтобы не мешал выводу сообщений в консоль
-        // navigate('chats');
     }
 
     protected auth() {}

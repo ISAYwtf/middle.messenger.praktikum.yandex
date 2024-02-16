@@ -3,3 +3,7 @@ export { ProfileActionRow } from './profile-action-row';
 export { ProfileAction } from './profile-action';
 export { ProfileDataInput } from './profile-data-input';
 export { ProfileDataError } from './profile-data-error';
+export { ProfileAvatar } from './profile-avatar';
+export { ProfileAvatarInput } from './profile-avatar-input';
+export { ProfileModal } from './profile-modal';
+export { ProfileBackButton } from './profile-back-button';

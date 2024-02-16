@@ -7,6 +7,7 @@
 @import url('/src/components/link/link.css');
 @import url('/src/modules/form-auth/form-auth.css');
 @import url('/src/modules/auth-block/auth-block.css');
+@import url('/src/modules/modal/modal.css');
 @import url('/src/pages/chats/chats.css');
 @import url('/src/pages/profile/profile.css');
 @import url('/src/pages/error/error.css');

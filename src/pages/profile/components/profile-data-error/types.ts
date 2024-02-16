@@ -1,3 +1,3 @@
 export interface ProfileDataErrorProps {
-    error: string,
+    error: string | null,
 }

@@ -1,0 +1,23 @@
+.chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border-bottom: 1px solid var(--color-tertiary);
+    padding: 10px 0;
+}
+
+.chat-header__author {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.chat-header__author-avatar {
+    height: 34px;
+}
+
+.chat-header__author-name {
+    font-weight: 600;
+    font-size: 13px;
+}

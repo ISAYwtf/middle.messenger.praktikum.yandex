@@ -17,14 +17,17 @@
 - Typescript
 - Handlebars
 - Eslint / Stylelint
+- WebSocket
+- HistoryAPI
+- XMLHttpRequest
 
 Для публикации приложения во внешнем домене используется Netlify.
 
 Для навигации по страницам используются пути:
 - /login
-- /registration
-- /chats
-- /profile
+- /sign-up
+- /messenger
+- /settings
 - /404
 - /500
 
@@ -54,6 +57,26 @@
 Во втором спринте реализована логика и жизненный цикл компонентов с использованием EventBus.
 Добавлены статические анализаторы кода.
 
+## Sprint 3
+В третьем спринте были добавлены базовые реализации:
+- State Management (Store)
+- Router
+- HTTPTransport
+- WSTransport
+
+Страницы подключены к API.
+Реализован real-time обмен сообщениями.
+Добавлены сервисы для инкапсуляции обработки серверных данных. 
+Централизованное хранение бизнес данных.
+Реализована логика
+- Регистрация и вход пользователя
+- Базовая аутентификация (редирект на страницу логина при отсутствии аутентификации)
+- Создание и удаление чатов
+- Добавление и удаление пользователей в чате 
+- Фильтрация списка чатов по названию
+- Редактирование данных профиля, в том числе пароль
+
+
 ### Ссылки
-- [Pull request](https://github.com/ISAYwtf/middle.messenger.praktikum.yandex/pull/5)
+- [Pull request](https://github.com/ISAYwtf/middle.messenger.praktikum.yandex/pull/6)
 - [Опубликованное приложение](https://isay-practicum-messenger.netlify.app)

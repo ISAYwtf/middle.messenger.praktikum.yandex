@@ -10,10 +10,18 @@
     cursor: pointer;
 }
 
-.button__primary {
-    background-color: var(--color-primary);
+.button__primary,
+.button__critical {
     color: #fff;
     font-size: 13px;
+}
+
+.button__primary {
+    background-color: var(--color-primary);
+}
+
+.button__critical {
+    background-color: var(--color-error);
 }
 
 .button__link {

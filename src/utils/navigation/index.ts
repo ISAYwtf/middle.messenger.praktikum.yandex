@@ -1,2 +1,1 @@
-export * from './appendPage.ts';
-export * from './navigate.ts';
+export * from './render.ts';

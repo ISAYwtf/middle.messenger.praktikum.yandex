@@ -1,6 +1,6 @@
 import { FieldProps } from '@components/field/types.ts';
 import { Button, Field } from '@components';
-import { PagesType } from '@pages';
+import { PathType } from '@routes/controller/types.ts';
 
 export type AuthRefs =
     & Record<string, Field>
@@ -12,5 +12,5 @@ export interface AuthProps {
     title?: string,
     primaryActionLabel?: string,
     secondaryActionLabel?: string,
-    secondaryActionLink?: Extract<PagesType, 'registration' | 'login'>,
+    secondaryActionLink?: Extract<PathType, 'sign-up' | 'login'>,
 }

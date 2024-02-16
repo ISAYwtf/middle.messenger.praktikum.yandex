@@ -7,3 +7,9 @@
     background-color: var(--color-background-primary);
     z-index: 1;
 }
+
+.navigation__top-bar-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

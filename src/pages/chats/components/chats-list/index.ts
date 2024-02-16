@@ -1,6 +1,6 @@
 import { registerComponent } from '@utils';
-import { ChatsList } from '@pages/chats/components';
+import { ChatsListConnected } from './chats-list.ts';
 
-export { ChatsList } from './chats-list.ts';
+registerComponent('ChatsList', ChatsListConnected);
 
-registerComponent('ChatsList', ChatsList);
+export { ChatsListConnected } from './chats-list.ts';

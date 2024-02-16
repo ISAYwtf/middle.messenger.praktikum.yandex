@@ -1,19 +1,15 @@
 <div class="message">
-    <div class="{{#if image}}message__img{{else}}message__text{{/if}}">
-        {{#if content.path}}
-            <img src="{{content.path}}" alt="{{content.name}}">
+    <div class="{{#if file}}message__img{{else}}message__text{{/if}}">
+        {{#if file.base64}}
+            <img src="data:image/jpeg;base64,{{{file.base64}}}" alt="{{file.name}}">
         {{else}}
             {{content}}
         {{/if}}
     </div>
     <div class="message__info">
-        {{#if read}}
+        {{#if is_read}}
             <div class="message__check message__check_read">
                 {{ svgIcon 'read' }}
-            </div>
-        {{else if sent}}
-            <div class="message__check message__check_sent">
-                {{ svgIcon 'sent' }}
             </div>
         {{/if}}
         <span class="message__time">{{time}}</span>

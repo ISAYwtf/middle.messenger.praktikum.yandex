@@ -1,6 +1,7 @@
 import { Block } from '@utils';
 import { default as template } from './chat-window.hbs?raw';
 import { ChatWindowProps } from './types.ts';
+import { connect } from '@store';
 
 export class ChatWindow extends Block<ChatWindowProps> {
     constructor(props: ChatWindowProps) {
@@ -11,3 +12,5 @@ export class ChatWindow extends Block<ChatWindowProps> {
         return template;
     }
 }
+
+export const ChatWindowConnected = connect(['currentChat'])(ChatWindow);

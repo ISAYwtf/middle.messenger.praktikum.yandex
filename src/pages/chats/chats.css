@@ -9,9 +9,21 @@
 @import url('components/submit-button/submit-button.css');
 @import url('components/message-block/message-block.css');
 @import url('components/chat-input-line/chat-input-line.css');
+@import url('components/new-chat-button/new-chat-button.css');
+@import url('components/chat-header/chat-header.css');
+@import url('components/chat-options-button/chat-options-button.css');
+@import url('components/chat-options-select/chat-options-select.css');
+@import url('components/chat-options-item/chat-options-item.css');
 
 .chats-container {
     display: flex;
     flex-grow: 1;
     height: 100%;
+}
+
+.chats-navigation {
+    display: flex;
+    flex-direction: column;
+    width: 320px;
+    background-color: var(--color-background-secondary);
 }

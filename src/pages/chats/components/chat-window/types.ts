@@ -1,3 +1,4 @@
 export interface ChatWindowProps {
-    selected: boolean,
+    title: string,
+    avatarFile: string | null,
 }

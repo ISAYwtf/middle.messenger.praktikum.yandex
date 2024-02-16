@@ -27,11 +27,17 @@ export class ChatInput extends Block<ChatInputProps> {
         this.error = value;
     }
 
-    private validate() {
+    validate() {
         const error = validators.text(this.value);
         this.setError(Boolean(error));
         this.props.onValidate?.(error);
         return error;
+    }
+
+    clear() {
+        if (this.element) {
+            (this.element as HTMLInputElement).value = '';
+        }
     }
 
     protected render(): string {

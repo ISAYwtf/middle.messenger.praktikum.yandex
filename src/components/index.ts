@@ -10,5 +10,4 @@ export { ProfileLink } from './profile-link';
 export { Badge } from './badge';
 export { Link } from './link';
 
-
 registerPartials({ Badge, Link, ProfileLink });
