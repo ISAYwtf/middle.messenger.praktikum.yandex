@@ -6,6 +6,7 @@ import arrowRightIcon from './arrowRight.svg';
 import readIcon from './read.svg';
 import templateAvatarIcon from './templateAvatar.svg';
 import arrowLeftIcon from './arrowLeft.svg';
+import closeIcon from './closeIcon.svg';
 
 export {
     searchIcon,
@@ -16,4 +17,5 @@ export {
     readIcon,
     templateAvatarIcon,
     arrowLeftIcon,
+    closeIcon,
 };

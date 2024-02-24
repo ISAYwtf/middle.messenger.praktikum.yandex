@@ -16,7 +16,7 @@ export const queryStringify = (data: QueryData) => {
                 return `${prev}${key}=[object Object]`;
             }
             if (value === '') {
-                return prev;
+                return acc;
             }
 
             return `${prev}${key}=${value}`;

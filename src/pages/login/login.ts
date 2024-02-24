@@ -17,6 +17,5 @@ export class Login extends AuthBlock {
     protected async auth() {
         const fields = this.fields as unknown as LoginDTO;
         await authService.login(fields);
-        // todo Выводить ошибку (компонент уведомлений)
     }
 }

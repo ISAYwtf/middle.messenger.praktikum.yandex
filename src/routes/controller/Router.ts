@@ -1,8 +1,8 @@
-import { BlockConstructable } from '@utils';
+import { BlockConstructable } from '@utils/component/types.ts';
 import { Route } from './Route.ts';
 import { FallbackPaths, Pathname, RouteType } from './types.ts';
 
-class Router {
+export class Router {
     constructor(rootQuery: Pathname) {
         this._rootQuery = rootQuery;
     }

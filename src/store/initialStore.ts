@@ -6,4 +6,5 @@ export const initialStore: AppStore = {
     chats: null,
     chatMessages: null,
     currentChat: null,
+    notifications: [],
 };

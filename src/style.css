@@ -5,6 +5,8 @@
 @import url('/src/components/profile-link/profile-link.css');
 @import url('/src/components/badge/badge.css');
 @import url('/src/components/link/link.css');
+@import url('/src/components/close-button/close-button.css');
+@import url('/src/modules/snackbar-stack/snackbar-stack.css');
 @import url('/src/modules/form-auth/form-auth.css');
 @import url('/src/modules/auth-block/auth-block.css');
 @import url('/src/modules/modal/modal.css');

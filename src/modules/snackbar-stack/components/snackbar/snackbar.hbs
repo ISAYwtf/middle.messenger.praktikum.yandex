@@ -1,0 +1,16 @@
+<div
+    class="snackbar"
+    data-type="{{#if type}}{{type}}{{else}}default{{/if}}"
+>
+    <div class="snackbar-header">
+        <div class="snackbar-title">
+            {{title}}
+        </div>
+        {{{ CloseButton onClick=onClose }}}
+    </div>
+    {{#if description}}
+        <div class="snackbar-description">
+            {{description}}
+        </div>
+    {{/if}}
+</div>
